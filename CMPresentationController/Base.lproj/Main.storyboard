@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,18 +19,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-02-AL4">
-                                <rect key="frame" x="161" y="318.5" width="53" height="30"/>
+                                <rect key="frame" x="156.5" y="318.5" width="62" height="30"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.66274509800000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="present"/>
+                                <state key="normal" title="中心弹出"/>
                                 <connections>
                                     <action selector="presentClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwg-1H-REX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5Y-Il-bs2">
+                                <rect key="frame" x="156" y="383" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.66274509800000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="底部弹出"/>
+                                <connections>
+                                    <action selector="bottomClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxZ-OP-Wqk"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.98431372549999996" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="L5Y-Il-bs2" firstAttribute="top" secondItem="A8W-02-AL4" secondAttribute="bottom" constant="34.5" id="7fj-Qt-0Lp"/>
                             <constraint firstItem="A8W-02-AL4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9BP-DA-xOb"/>
                             <constraint firstItem="A8W-02-AL4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Do1-gR-AXg"/>
+                            <constraint firstItem="L5Y-Il-bs2" firstAttribute="centerX" secondItem="A8W-02-AL4" secondAttribute="centerX" id="To8-hJ-OOv"/>
+                            <constraint firstItem="L5Y-Il-bs2" firstAttribute="width" secondItem="A8W-02-AL4" secondAttribute="width" id="XaN-nI-cI0"/>
+                            <constraint firstItem="L5Y-Il-bs2" firstAttribute="height" secondItem="A8W-02-AL4" secondAttribute="height" id="Zag-Ni-KiV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

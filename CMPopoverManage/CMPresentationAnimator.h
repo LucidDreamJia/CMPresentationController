@@ -10,7 +10,7 @@
 
 typedef enum : NSUInteger {
     CMPresentationAnimatorTypeDefault,//默认
-    CMPresentationAnimatorTypeScale,//缩放
+    CMPresentationAnimatorTypeCenter,//中心弹出
     CMPresentationAnimatorTypeTranslation,//Y轴移动
 } CMPresentationAnimatorType;
 

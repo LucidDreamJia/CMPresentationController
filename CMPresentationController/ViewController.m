@@ -28,18 +28,29 @@
     FirstViewController *firstVC = [[FirstViewController alloc] init];
     firstVC.modalPresentationStyle = UIModalPresentationCustom;
     firstVC.transitioningDelegate = [CMPresentationAnimator presentationAnimator];
-    [CMPresentationAnimator presentationAnimator].presentFrame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 200, [UIScreen mainScreen].bounds.size.width, 200);
-    [CMPresentationAnimator presentationAnimator].translationY = - 200;
-    
-//    [CMPresentationAnimator presentationAnimator].presentCenter= CGPointMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
-//    [CMPresentationAnimator presentationAnimator].presentSize = CGSizeMake(200, 200);
-    [CMPresentationAnimator presentationAnimator].animationorType = CMPresentationAnimatorTypeTranslation;
-//
-//    [CMPresentationAnimator presentationAnimator].translationY = - ([UIScreen mainScreen].bounds.size.height / 2);
+ 
+    [CMPresentationAnimator presentationAnimator].presentCenter= CGPointMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
+    [CMPresentationAnimator presentationAnimator].presentSize = CGSizeMake(200, 200);
+    [CMPresentationAnimator presentationAnimator].animationorType = CMPresentationAnimatorTypeCenter;
+    [CMPresentationAnimator presentationAnimator].translationY = - ([UIScreen mainScreen].bounds.size.height / 2);
     
     [self presentViewController:firstVC animated:YES completion:nil];
     
 }
+
+
+- (IBAction)bottomClick:(UIButton *)sender {
+    FirstViewController *firstVC = [[FirstViewController alloc] init];
+    firstVC.modalPresentationStyle = UIModalPresentationCustom;
+    firstVC.transitioningDelegate = [CMPresentationAnimator presentationAnimator];
+    
+    [CMPresentationAnimator presentationAnimator].presentFrame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 200, [UIScreen mainScreen].bounds.size.width, 200);
+    [CMPresentationAnimator presentationAnimator].translationY = - 200;
+    [CMPresentationAnimator presentationAnimator].animationorType = CMPresentationAnimatorTypeTranslation;
+    
+    [self presentViewController:firstVC animated:YES completion:nil];
+}
+
 
 
 - (void)didReceiveMemoryWarning {

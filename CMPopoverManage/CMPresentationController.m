@@ -21,24 +21,22 @@
     [coverView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)]];
     
     //设置弹出View的尺寸
-    if (![NSStringFromCGRect(self.presentFrame) isEqualToString:NSStringFromCGRect(CGRectZero)]) {
+    if ([CMPresentationAnimator presentationAnimator].animationorType != CMPresentationAnimatorTypeCenter) {
+        
+        self.presentedView.transform = CGAffineTransformIdentity;
         
         self.presentedView.frame = self.presentFrame;
         
-    } else if (![NSStringFromCGPoint(self.presentCenter) isEqualToString:NSStringFromCGPoint(CGPointZero)]) {
         
-        if ([CMPresentationAnimator presentationAnimator].animationorType != CMPresentationAnimatorTypeScale) {
-            self.presentedView.transform = CGAffineTransformIdentity;
-        }
-        
+    } else {
         CGRect pframe = self.presentedView.frame;
         pframe.size.width = self.presentSize.width;
         pframe.size.height = self.presentSize.height;
         self.presentedView.frame = pframe;
         
         self.presentedView.center = self.presentCenter;
-        
     }
+    
     
 }
 
